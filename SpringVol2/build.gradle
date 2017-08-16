@@ -39,6 +39,18 @@ dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.41'
     // https://mvnrepository.com/artifact/org.springframework/spring-ibatis
     compile group: 'org.springframework', name: 'spring-ibatis', version: '2.0.8'
+    // https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.0-api
+    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.1.Final'
+    // https://mvnrepository.com/artifact/org.eclipse.persistence/org.eclipse.persistence.jpa
+    compile group: 'org.eclipse.persistence', name: 'org.eclipse.persistence.jpa', version: '2.6.4'
+// https://mvnrepository.com/artifact/org.hibernate/hibernate-core
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '4.3.11.Final'
+
+
+
+
+    // https://mvnrepository.com/artifact/org.springframework/spring-orm
+    compile group: 'org.springframework', name: 'spring-orm', version: '4.3.9.RELEASE'
 
 
 
