@@ -1,6 +1,7 @@
 package springbook.learningtest.jpa;
 
 import org.springframework.stereotype.Repository;
+import springbook.learningtest.hibernate.Member;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

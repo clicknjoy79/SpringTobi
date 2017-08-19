@@ -18,7 +18,7 @@ import springbook.learningtest.spring.web.AbstractDispatcherServletTest;
 
 public class ServletControllerTest extends AbstractDispatcherServletTest {
 	@Test
-	public void helloServletController() throws ServletException, IOException {
+	public void helloServletController() throws ServletException, 									IOException {
 		setClasses(SimpleServletHandlerAdapter.class, HelloServlet.class);
 		initRequest("/hello").addParameter("name", "Spring");
 		assertThat(runService().getContentAsString(), is("Hello Spring"));

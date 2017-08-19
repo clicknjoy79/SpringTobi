@@ -1,5 +1,8 @@
 package springbook.learningtest.jpa;
 
+
+import springbook.learningtest.hibernate.Member;
+
 import javax.persistence.*;
 
 public class MemberDao {

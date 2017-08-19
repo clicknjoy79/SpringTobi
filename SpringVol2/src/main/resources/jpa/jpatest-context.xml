@@ -6,7 +6,7 @@
 
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="persistenceXmlLocation" value="jpa/persistence.xml"/>
+        <property name="packagesToScan" value="springbook.learningtest.hibernate"/>
         <property name="jpaProperties">
             <props>
                 <prop key="eclipselink.weaving">false</prop>

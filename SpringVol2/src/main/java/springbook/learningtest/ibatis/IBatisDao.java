@@ -2,7 +2,7 @@ package springbook.learningtest.ibatis;
 
 import com.ibatis.sqlmap.client.SqlMapClient;
 import org.springframework.orm.ibatis.SqlMapClientTemplate;
-import springbook.learningtest.jdbc.Member;
+import springbook.learningtest.hibernate.Member;
 
 import java.util.List;
 

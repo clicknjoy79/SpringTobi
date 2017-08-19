@@ -20,9 +20,9 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.jdbc.datasource.SimpleDriverDataSource;
 import org.springframework.mock.jndi.SimpleNamingContextBuilder;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import springbook.learningtest.hibernate.Member;
 
 import javax.naming.NamingException;
 import javax.sql.DataSource;
@@ -107,9 +107,9 @@ public class JdbcTest {
 
         // queryForObject(RowMapper)
         Member mret = dao.get(1);
-        assertThat(mret.id, is(1));
-        assertThat(mret.name, is("Spring"));
-        assertThat(mret.point, is(3.5));
+        assertThat(mret.getId(), is(1));
+        assertThat(mret.getName(), is("Spring"));
+        assertThat(mret.getPoint(), is(3.5));
 
         // query(RowMapper)
         assertThat(dao.find(1).size(), is(3));
