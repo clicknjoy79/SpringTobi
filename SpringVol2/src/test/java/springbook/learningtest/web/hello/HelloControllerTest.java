@@ -28,7 +28,7 @@ public class HelloControllerTest  {
         servlet.service(req, res);
 
         ModelAndView mv = servlet.getModelAndView();
-        assertThat(mv.getViewName(), is("/WEB-INF/view/hello.jsp"));
+        assertThat(mv.getViewName(), is("/WEB-INF/view/hello1.jsp"));
         assertThat(mv.getModel().get("message"), is("Hello Spring"));
 
     }

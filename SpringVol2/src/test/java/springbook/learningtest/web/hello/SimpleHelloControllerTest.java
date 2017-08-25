@@ -20,7 +20,7 @@ public class SimpleHelloControllerTest extends AbstractDispatcherServletTest {
                 .runService()
                 .getModelAndView();
 
-        assertThat(mv.getViewName(), is("/WEB-INF/view/hello.jsp"));
+        assertThat(mv.getViewName(), is("/WEB-INF/view/hello1.jsp"));
         assertThat(mv.getModel().get("message"), is("Hello Spring"));
     }
 
@@ -31,7 +31,7 @@ public class SimpleHelloControllerTest extends AbstractDispatcherServletTest {
                 .initRequest("/hello", RequestMethod.GET).addParameter("name", "Spring")
                 .runService()
                 .assertModel("message", "Hello Spring")
-                .assertViewName("/WEB-INF/view/hello.jsp");
+                .assertViewName("/WEB-INF/view/hello1.jsp");
     }
 
     @Test
@@ -42,7 +42,7 @@ public class SimpleHelloControllerTest extends AbstractDispatcherServletTest {
                 .initRequest("/app/hello", RequestMethod.GET).addParameter("name", "Spring")
                 .runService()
                 .assertModel("message", "Hello Spring")
-                .assertViewName("/WEB-INF/view/hello.jsp");
+                .assertViewName("/WEB-INF/view/hello1.jsp");
     }
 }
 

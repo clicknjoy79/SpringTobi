@@ -17,7 +17,7 @@ public class SimpleAnnotationControllerTest extends AbstractDispatcherServletTes
         initRequest("/hello").addParameter("name", "Spring");
         runService();
         assertModel("message", "Hello Spring");
-        assertViewName("/WEB-INF/view/hello.jsp");
+        assertViewName("/WEB-INF/view/hello1.jsp");
     }
 
 
@@ -26,7 +26,7 @@ public class SimpleAnnotationControllerTest extends AbstractDispatcherServletTes
         @RequestMapping("/hello")
         public String hello(@RequestParam("name") String name, ModelMap map) {
             map.put("message", "Hello " + name);
-            return "/WEB-INF/view/hello.jsp";
+            return "/WEB-INF/view/hello1.jsp";
         }
     }
 }

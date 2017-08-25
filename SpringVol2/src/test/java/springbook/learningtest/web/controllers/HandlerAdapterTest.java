@@ -25,7 +25,7 @@ public class HandlerAdapterTest extends AbstractDispatcherServletTest {
         setClasses(SimpleHandlerAdapter.class, HelloController.class);
         initRequest("/hello").addParameter("name", "Spring")
                 .runService()
-                .assertViewName("/WEB-INF/view/hello.jsp")
+                .assertViewName("/WEB-INF/view/hello1.jsp")
                 .assertModel("message", "Hello Spring");
     }
 
@@ -64,7 +64,7 @@ public class HandlerAdapterTest extends AbstractDispatcherServletTest {
     @Component("/hello")
     static class HelloController implements SimpleController {
         @Override
-        @ViewName("/WEB-INF/view/hello.jsp")
+        @ViewName("/WEB-INF/view/hello1.jsp")
         @RequiredParams({"name"})
         public void control(Map<String, String> params, Map<String, Object> model) {
             model.put("message", "Hello " + params.get("name"));

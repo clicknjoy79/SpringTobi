@@ -23,7 +23,7 @@ public class HandlerMappingTest extends AbstractDispatcherServletTest{
     @Test
     public void beanNameUrlHM() throws ServletException, IOException {
         setRelativeLocations("/web/beannameurlhm.xml")
-                .runService("/hello").assertViewName("/hello.jsp");
+                .runService("/hello").assertViewName("/hello1.jsp");
         runService("/hello/world").assertViewName("/hello/world.jsp");
         runService("/multi/").assertViewName("/multi/*.jsp");
         runService("/multi/a").assertViewName("/multi/*.jsp");

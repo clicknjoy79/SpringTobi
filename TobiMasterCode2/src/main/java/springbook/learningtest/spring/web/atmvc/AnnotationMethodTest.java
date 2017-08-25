@@ -30,7 +30,7 @@ import org.springframework.web.util.NestedServletException;
 
 import springbook.learningtest.spring.web.AbstractDispatcherServletTest;
 
-public class AnnotationMethodTest extends AbstractDispatcherServletTest {
+public class 	AnnotationMethodTest extends AbstractDispatcherServletTest {
 	@Test
 	public void simple() throws ServletException, IOException {
 		setClasses(ViewResolver.class, SimpleController.class);
@@ -147,10 +147,10 @@ public class AnnotationMethodTest extends AbstractDispatcherServletTest {
 		assertViewName("hello1.jsp");
 		
 		//	for(String name : getModelAndView().getModel().keySet()) { System.out.println(name); System.out.println(getModelAndView().getModel().get(name).getClass());}
-		assertModel("mesg", "hi");	// ÀÚµ¿µî·Ï command model
-		assertModel("string", "string");	// ÀÚµ¿µî·Ï parameter model
-		assertModel("ref", "data");	// ÀÚµ¿µî·Ï @ModelAttribute method
-		assertThat(getModelAndView().getModel().size(), is(5)); // BindResultµµ ÀÚµ¿µî·Ï
+		assertModel("mesg", "hi");	// ï¿½Úµï¿½ï¿½ï¿½ï¿½ command model
+		assertModel("string", "string");	// ï¿½Úµï¿½ï¿½ï¿½ï¿½ parameter model
+		assertModel("ref", "data");	// ï¿½Úµï¿½ï¿½ï¿½ï¿½ @ModelAttribute method
+		assertThat(getModelAndView().getModel().size(), is(5)); // BindResultï¿½ï¿½ ï¿½Úµï¿½ï¿½ï¿½ï¿½
 		
 		assertThat(((User)getModelAndView().getModel().get("user")).getId(), is(1));
 		assertThat(((User)getModelAndView().getModel().get("user")).getName(), is("Spring"));

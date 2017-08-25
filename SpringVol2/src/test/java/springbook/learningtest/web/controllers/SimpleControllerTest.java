@@ -23,7 +23,7 @@ public class SimpleControllerTest extends AbstractDispatcherServletTest{
         initRequest("/hello").addParameter("name", "Spring");
         runService();
         assertModel("message", "Hello Spring");
-        assertViewName("/WEB-INF/view/hello.jsp");
+        assertViewName("/WEB-INF/view/hello1.jsp");
     }
 
     @Test(expected = Exception.class)
@@ -48,7 +48,7 @@ public class SimpleControllerTest extends AbstractDispatcherServletTest{
     static class HelloController extends SimpleController {
         public HelloController() {
             this.setRequiredParams(new String[] {"name"});
-            this.setViewName("/WEB-INF/view/hello.jsp");
+            this.setViewName("/WEB-INF/view/hello1.jsp");
         }
 
         @Override
