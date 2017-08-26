@@ -16,6 +16,9 @@
         <property name="basename" value="web.messages"/>
     </bean>
 
-    <mvc:resources mapping="/ui/**" location="classpath*:/META-INF/ui/*"/>
+    <!--
+    프로젝트에 이미지를 넣고 jar 파일로 압축한 다음 클래스 패스에 추가한 경우에는
+    해당 이미지 파일에 접근하기 위해서는 img 태그에서 src에 클래스 패스에 있는 FULL 이미지 경로를 넣어줘야 한다.(META-INF 제외)-->
+    <mvc:resources mapping="/ui/**" location="classpath:/META-INF/ui/"/>
 
 </beans>

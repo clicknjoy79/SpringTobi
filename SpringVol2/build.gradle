@@ -56,8 +56,13 @@ dependencies {
     compile group: 'org.eclipse.persistence', name: 'org.eclipse.persistence.jpa', version: '2.6.4'
     // https://mvnrepository.com/artifact/org.springframework/spring-orm
     compile group: 'org.springframework', name: 'spring-orm', version: '4.3.9.RELEASE'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.9.0'
     // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.9'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: '2.9.0'
+
     // https://mvnrepository.com/artifact/org.springframework/spring-oxm
     compile group: 'org.springframework', name: 'spring-oxm', version: '4.3.9.RELEASE'
     // https://mvnrepository.com/artifact/org.codehaus.castor/castor
@@ -75,8 +80,6 @@ dependencies {
     // https://mvnrepository.com/artifact/org.glassfish.web/javax.el
     compile group: 'org.glassfish.web', name: 'javax.el', version: '2.2.6'
     compile files('lib/Resource.jar')
-
-
 
 
 
