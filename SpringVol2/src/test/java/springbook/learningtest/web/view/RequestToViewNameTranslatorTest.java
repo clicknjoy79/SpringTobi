@@ -20,7 +20,7 @@ public class RequestToViewNameTranslatorTest extends AbstractDispatcherServletTe
     @Test
     public void defaultRequestToViewNameTranslator() throws ServletException, IOException {
         setClasses(Config.class);
-        runService("/hello").assertViewName("hello1.jsp");
+        runService("/hello").assertViewName("hello.jsp");
         runService("/hello/world").assertViewName("hello/world.jsp");
         runService("/hi").assertViewName("hi.jsp");
     }

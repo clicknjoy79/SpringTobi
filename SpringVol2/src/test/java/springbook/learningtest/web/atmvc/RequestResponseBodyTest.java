@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import springbook.learningtest.web.AbstractDispatcherServletTest;
-import springbook.user.domain.User;
 
 import javax.servlet.ServletException;
 import java.io.IOException;
@@ -31,8 +30,9 @@ public class RequestResponseBodyTest extends AbstractDispatcherServletTest{
         assertThat(response.getStatus(), is(200));
 
         initRequest("/hello3", "POST");
-        request.setContentType("application/json;charset=UTF-8");
-        request.setContent("{\"id\":\"1\",\"name\":\"Spring\"".getBytes());
+        // JSON 은 기본적으로 UTF-8로 인코딩 된다.
+        request.setContentType("application/json");
+        request.setContent("{\"id\":1,\"name\":\"홍길동\"}".getBytes());
         runService();
         assertThat(response.getStatus(), is(200));
 
@@ -48,14 +48,39 @@ public class RequestResponseBodyTest extends AbstractDispatcherServletTest{
             assertThat(body, is("이름=홍길동"));
         }
         @RequestMapping("/hello3")
-        public void form3(@RequestBody User user) {
-            assertThat(user.getId(), is("1"));
-            assertThat(user.getName(), is("Spring"));
+        public String form3(@RequestBody User user) {
+            assertThat(user.getId(), is(1));
+            assertThat(user.getName(), is("홍길동"));
+            return "next";
         }
     }
 
+    static class User {
+        int id;
+        String name;
 
+        public User(int id, String name) {
+            this.id = id;
+            this.name = name;
+        }
 
+        public User() {}
 
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
 
 }

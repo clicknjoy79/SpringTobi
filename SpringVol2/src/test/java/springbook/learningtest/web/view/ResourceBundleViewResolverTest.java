@@ -21,7 +21,7 @@ public class ResourceBundleViewResolverTest extends AbstractDispatcherServletTes
     public void rbvr() throws ServletException, IOException {
         setClasses(RBVR.class, TempInternalResourceViewResolver.class, HelloController.class, MainController.class);
         runService("/hello");
-        assertThat(response.getForwardedUrl(), is("/WEB-INF/view/hello1.jsp"));
+        assertThat(response.getForwardedUrl(), is("/WEB-INF/view/hello.jsp"));
 
         runService("/main");
         System.out.println(response.getForwardedUrl());

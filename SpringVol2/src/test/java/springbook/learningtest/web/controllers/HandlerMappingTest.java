@@ -1,7 +1,5 @@
 package springbook.learningtest.web.controllers;
 
-import com.oracle.webservices.internal.api.EnvelopeStyle;
-import com.sun.jmx.snmp.SnmpUnknownModelLcdException;
 import org.junit.Test;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +21,7 @@ public class HandlerMappingTest extends AbstractDispatcherServletTest{
     @Test
     public void beanNameUrlHM() throws ServletException, IOException {
         setRelativeLocations("/web/beannameurlhm.xml")
-                .runService("/hello").assertViewName("/hello1.jsp");
+                .runService("/hello").assertViewName("/hello.jsp");
         runService("/hello/world").assertViewName("/hello/world.jsp");
         runService("/multi/").assertViewName("/multi/*.jsp");
         runService("/multi/a").assertViewName("/multi/*.jsp");

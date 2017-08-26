@@ -39,7 +39,7 @@ public class AspectJTest {
         try {
             dao.addWithoutTx(Arrays.asList(new Member[]{
                     new Member(3, "Spring", 1.2),
-                    new Member(4, LONG_STR, 1.2)
+                    new Member(4, LONG_STR, 1.2)    //  exception occur
             }));
             fail();
         } catch (DataAccessException e) {

@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Gradle : org.spring.tobi : TobiMasterCode2-1.0-SNAPSHOT.war (exploded)">
+    <output-path>$PROJECT_DIR$/TobiMasterCode2/build/libs/exploded/TobiMasterCode2-1.0-SNAPSHOT.war</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/TobiMasterCode2">
+        <manifest>TWFuaWZlc3QtVmVyc2lvbjogMS4wDQoNCg==</manifest>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/TobiMasterCode2/build/libs/exploded/TobiMasterCode2-1.0-SNAPSHOT.war/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="TobiMasterCode2_main/web/Web Gradle : TobiMasterCode2-1.0-SNAPSHOT.war" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="TobiMasterCode2_main" />
+          <element id="dir-copy" path="$PROJECT_DIR$/TobiMasterCode2/out/production/resources" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.3.11/f6b34997d04c1538ce451d3955298f46fdb4dbd4/groovy-all-2.3.11.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
