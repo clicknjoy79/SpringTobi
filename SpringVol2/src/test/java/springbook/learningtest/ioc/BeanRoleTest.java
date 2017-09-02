@@ -1,8 +1,10 @@
 package springbook.learningtest.ioc;
 
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
+import org.springframework.web.context.ConfigurableWebApplicationContext;
 import springbook.learningtest.ioc.bean.BeanDefinitionUtils;
 import springbook.learningtest.ioc.config.SimpleConfig;
 

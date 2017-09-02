@@ -24,7 +24,7 @@ public class TxNamespaceTest {
 
     @Test
     public void tx() {
-        dao.deleteAll();;
+        dao.deleteAll();
         assertThat(dao.count(), is(0L));
 
         dao.add(Arrays.asList(new Member[] {

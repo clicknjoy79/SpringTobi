@@ -1,0 +1,19 @@
+1. 톰캣 context.xml에서
+<Loader loaderClass = "org.springframework.instrument.classloading.tomcat.TomcatInstrumentableClassLoader"/>
+를 추가한다.
+
+2. AppConfig 에
+@EnableLoadTimeWeaving(aspectjWeaving = EnableLoadTimeWeaving.AspectJWeaving.ENABLED)
+@EnableSpringConfigured
+를 추가한다.
+
+3. 로드타임 위빙을 적용할 클래스에 @Configurble 을 추가한다.(해당 클래스는 빈이 아니다)
+
+4. 빈이 아님에도 불구하고 DI 가 적용되는 지 확인한다.
+
+5. DI 가 적용되었다면 객체가 생성되는 시점에 DI 가 적용된 것이다.
+
+테스트 방법
+1. 톰캣을 구동한다.
+2. /member 를 입력한다.
+3. 서비스 메소드가 호출 되는 지 확인한다.

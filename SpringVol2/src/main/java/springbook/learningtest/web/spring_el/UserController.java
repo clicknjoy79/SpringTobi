@@ -1,35 +1,27 @@
 package springbook.learningtest.web.spring_el;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Scope;
-import org.springframework.context.support.ConversionServiceFactoryBean;
-import org.springframework.core.convert.ConversionService;
-import org.springframework.core.convert.TypeDescriptor;
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.core.convert.support.GenericConversionService;
-import org.springframework.format.support.FormattingConversionServiceFactoryBean;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.Validator;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.util.UriComponentsBuilder;
 
-import javax.annotation.Resource;
-import javax.inject.Inject;
-import javax.inject.Provider;
-import javax.persistence.Convert;
 import javax.validation.Valid;
-import java.beans.PropertyEditorSupport;
 import java.util.*;
 
 @Controller
 @SessionAttributes("user")
 public class UserController {
-    @Autowired Validator validator;
-    @Autowired ConversionService conversionService;
+//    @Autowired Validator validator;
+//    @Autowired ConversionService conversionService;
+
+    @RequestMapping("/user/search/{id}")
+    @ResponseBody
+    public User search(@PathVariable int id) {
+        return new User(id, id + ": 홍길동", null, null);
+    }
 
     @RequestMapping(value = "/hello1", method = RequestMethod.GET)
     public String hello(Model model) {
@@ -69,6 +61,12 @@ public class UserController {
         return "hello2";
     }
 
+    @RequestMapping("/hello3")
+    public String hello33(UriComponentsBuilder builder) {
+        System.out.println(builder.toUriString());
+        return "index";
+    }
+
     @ModelAttribute("interests")
     public Map<String, String> interests() {
         Map<String, String> interests = new HashMap<>();
@@ -97,7 +95,7 @@ public class UserController {
         return list;
     }
 
-    static class StringToTypeConverter implements Converter<String, Type> {
+    public static class StringToTypeConverter implements Converter<String, Type> {
         TypeService typeService = new TypeService();
 
         @Override
@@ -106,14 +104,14 @@ public class UserController {
         }
     }
 
-    static class TypetoStringConverter implements Converter<Type, String> {
+    public static class TypetoStringConverter implements Converter<Type, String> {
         @Override
         public String convert(Type source) {
             return String.valueOf(source.getId());
         }
     }
 
-    static class StringToLocalConverter implements Converter<String, Local> {
+    public static class StringToLocalConverter implements Converter<String, Local> {
         LocalService localService = new LocalService();
 
         @Override
@@ -122,7 +120,7 @@ public class UserController {
         }
     }
 
-    static class LocalToStringConverter implements Converter<Local, String> {
+    public static class LocalToStringConverter implements Converter<Local, String> {
         @Override
         public String convert(Local source) {
             return String.valueOf(source.getId());
@@ -151,13 +149,13 @@ public class UserController {
         }
     }
 
-    @Component("myConversionService")
-    static class MyConversionService extends FormattingConversionServiceFactoryBean {{
-        setConverters(new LinkedHashSet<>(Arrays.asList(
-                new Converter[] { new LocalToStringConverter(), new StringToLocalConverter(),
-                new TypetoStringConverter(), new StringToTypeConverter()}
-        )));
-    }}
+//    @Component("myConversionService")
+//    static class MyConversionService extends FormattingConversionServiceFactoryBean {{
+//        setConverters(new LinkedHashSet<>(Arrays.asList(
+//                new Converter[] { new LocalToStringConverter(), new StringToLocalConverter(),
+//                new TypetoStringConverter(), new StringToTypeConverter()}
+//        )));
+//    }}
 
     static class Type {
         int id;
@@ -275,7 +273,7 @@ public class UserController {
                 return false;
         }
     }
-    @InitBinder void initBinder(WebDataBinder dataBinder) {
-        dataBinder.setValidator(this.validator);
-    }
+//    @InitBinder void initBinder(WebDataBinder dataBinder) {
+//        dataBinder.setValidator(this.validator);
+//    }
 }

@@ -1,6 +1,7 @@
 package springbook.learningtest.ioc.bean;
 
 import org.springframework.context.support.GenericApplicationContext;
+import org.springframework.web.context.ConfigurableWebApplicationContext;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,18 @@ public class BeanDefinitionUtils {
             for(String beanInfo : beanInfos) {
                 System.out.println(beanInfo);
             }
+        }
+    }
+
+    public static void printBeanDefinitions(ConfigurableWebApplicationContext gac) {
+        List<String> beanInfos = new ArrayList<>();
+
+        for(String name : gac.getBeanDefinitionNames()) {
+            beanInfos.add(name + "\t" + gac.getBean(name).getClass().getName());
+        }
+
+        for(String beanInfo : beanInfos) {
+            System.out.println(beanInfo);
         }
     }
 }

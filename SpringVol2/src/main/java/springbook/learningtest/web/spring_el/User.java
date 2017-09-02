@@ -20,6 +20,10 @@ public class User {
 
     public User() {}
 
+    public User(int id, String name, UserController.Type userType, UserController.Local userLocal) {
+        this.id = id; this.name = name; this.userType = userType; this.userLocal = userLocal;
+    }
+
     public UserController.Type getUserType() {
         return userType;
     }
